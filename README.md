@@ -10,7 +10,7 @@
 你可以通过 npm 安装 `my-utils`：
 
 ```bash
-npm install my-utils
+npm i @sunnyfan/my-utils
 ```
 
 ## 使用
