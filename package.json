@@ -1,6 +1,6 @@
 {
   "name": "@sunnyfan/my-utils",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "author": "sunnyfan",
   "description": "This is a toolkit for common methods",
   "main": "lib/index.js",
@@ -9,10 +9,14 @@
     "lib",
     "README.md"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fx35792/my-utils.git"
+  },
   "scripts": {
     "test": "jest",
     "build": "babel src -d lib --copy-files",
-    "publish": "npm publish --access public"
+    "publish": "npm publish --access=public"
   },
   "devDependencies": {
     "@babel/cli": "^7.26.4",

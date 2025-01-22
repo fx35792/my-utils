@@ -8,12 +8,12 @@ test('是否为空', () => {
   expect(isEmpty('')).toEqual(true)
 })
 test('手机号脱敏功能', () => {
-  expect(maskPhone('18311098924')).toBe('183****8924')
+  expect(maskPhone('13000040500')).toBe('130****0500')
 })
 test('姓名脱敏功能', () => {
   expect(maskName('张三')).toBe('张*')
 })
 
 test('证件号脱敏功能', () => {
-  expect(maskCardNumber('130427199106120556')).toBe('130427****0556')
+  expect(maskCardNumber('130427202301017102')).toBe('130427****7102')
 })
