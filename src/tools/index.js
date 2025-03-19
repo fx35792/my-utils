@@ -76,10 +76,39 @@ function maskCardNumber(cardNum) {
   return cardNum.replace(regExp, replaceExp)
 }
 
+// 数组转对象 [{label:'语文', value:'chinese'},{label:'数学', value:'math'}] 转换为 {chinese:'语文', math:'数学'}
+function arrToObj(arr = [], label, value) {
+  // 若数组为空 则返回空对象
+  if (!arr.length) return {}
+
+  const valueText = value || 'value' // 作为对象的 key
+  const labelText = label || 'label' // 作为对象的 value
+  return arr.reduce((acc, item) => {
+    acc[item[valueText]] = item[labelText]
+    return acc
+  }, {})
+}
+
+// 对象转数组 {chinese:'语文', math:'数学'} 转换为数组 [{label:'语文', value:'chinese'},{label:'数学', value:'math'}]
+function objToArr(obj = {}, label, value) {
+  // 若对象为空 则 返回空数组
+  if (!Object.values(obj).length) return []
+  
+  const valueText = value || 'value' // 作为对象的 key
+  const labelText = label || 'label' // 作为对象的 value
+
+  return Object.entries(obj).map(([value, label]) => ({
+    [labelText]: label,
+    [valueText]: value
+  }))
+}
+
 export default {
   unique,
   isEmpty,
   maskName,
   maskPhone,
-  maskCardNumber
+  maskCardNumber,
+  arrToObj,
+  objToArr
 }
